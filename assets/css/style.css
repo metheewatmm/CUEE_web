@@ -1,0 +1,82 @@
+/* Hero Section background */
+.hero {
+    background: linear-gradient(135deg, #a89403, #7e0000);
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+.hero h1 {
+    font-size: 3rem;
+    /* เปลี่ยนขนาดหัวข้อ */
+    font-weight: bold;
+}
+
+/* ขนาดตัวอักษรย่อ / paragraph */
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: auto;
+}
+/* ปุ่มสไตล์เฉพาะของค่าย */
+.btn-primary {
+    background-color: #ff9800;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #ff6d33;
+    transform: scale(1.05);
+}
+
+/* Navbar shadow */
+.navbar {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, #a80303 0%, #b64b4b 100%) !important;
+    /* เปลี่ยนสี navbar เป็นทองเข้ม-ส้ม */
+    min-height: 80px;
+        /* หรือปรับเป็นค่าที่ต้องการ */
+}
+.navbar .container {
+    min-height: 80px;
+    align-items: center;
+    display: flex;
+}
+
+/* Text animation ตอนโหลด */
+.hero h1 {
+    animation: fadeInUp 1s ease-out;
+    .hero h1 {
+  font-size: 3rem; /* เปลี่ยนขนาดหัวข้อ */
+  font-weight: bold;
+}
+
+/* ขนาดตัวอักษรย่อ / paragraph */
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: auto;
+}
+}
+
+.text-primary {
+    color: #000 !important;
+}
+
+.img-fluid rounded shadow {
+    margin : auto ;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
