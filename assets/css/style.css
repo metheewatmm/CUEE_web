@@ -34,7 +34,7 @@
 /* Navbar shadow */
 .navbar {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(90deg, #a80303 0%, #b64b4b 100%) !important;
+    background: linear-gradient(90deg, #2f03a8 0%, #b64b4b 100%) !important;
     /* เปลี่ยนสี navbar เป็นทองเข้ม-ส้ม */
     min-height: 80px;
         /* หรือปรับเป็นค่าที่ต้องการ */
