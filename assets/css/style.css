@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-/* Hero Section background */
-.hero {
-    background: linear-gradient(135deg, #a89403, #7e0000);
-    height: 90vh;
-=======
 /* =========================================
-   1. Theme Variables (Palette จากบรีฟ)
+   1. Theme Variables (Palette: Maya Theme)
    ========================================= */
 :root {
     --maya-green: #5d866c;
@@ -24,28 +18,24 @@
 
 body {
     background-color: #fffaf0;
-    /* พื้นหลังขาวนวล (Floral White) ให้ดูสะอาด */
+    /* Floral White */
     color: var(--maya-brown-dark);
     font-family: 'Prompt', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* =========================================
    2. Navbar (Modern Sand Style)
    ========================================= */
 .theme-navbar {
-    /* ✅ เปลี่ยนเป็นพื้นหลังสีครีมสว่าง */
     background-color: var(--maya-cream);
-
-    /* ขอบล่างสีเขียวเข้ม เน้นเส้นสาย */
     border-bottom: 4px solid var(--maya-green);
-
-    /* เงาบางๆ ให้ดูลอยนิดๆ */
     box-shadow: 0 4px 10px rgba(98, 70, 70, 0.1);
 }
 
 .navbar-brand {
     color: var(--maya-brown-dark) !important;
-    /* โลโก้สีน้ำตาลเข้ม */
     font-weight: 800;
     font-size: 1.6rem;
     letter-spacing: 1px;
@@ -57,7 +47,7 @@ body {
     margin: 0 5px;
     padding: 8px 18px;
     border-radius: 50px;
-    /* ปุ่มมนรี (Pill shape) */
+    /* Pill shape */
     transition: all 0.3s ease;
 }
 
@@ -91,7 +81,7 @@ body {
     background-color: var(--maya-brown-dark);
 }
 
-/* Background Blur */
+/* Background Blur Layer */
 .bg-blur-img {
     position: absolute;
     top: 0;
@@ -100,28 +90,22 @@ body {
     height: 100%;
     object-fit: cover;
     filter: blur(20px) brightness(0.9);
-    /* สว่างขึ้นกว่าแบบแรก */
     z-index: 0;
     transform: scale(1.1);
+    /* ขยายเพื่อซ่อนขอบเบลอ */
 }
 
-/* Main Image */
+/* Main Image Container */
 .main-img-container {
     position: relative;
     z-index: 1;
     height: 100%;
     padding-bottom: 100px;
->>>>>>> a542b4a (update: add photos page and latest changes)
+    /* เว้นที่ให้ Caption ด้านล่าง */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-<<<<<<< HEAD
-.hero h1 {
-    font-size: 3rem;
-    /* เปลี่ยนขนาดหัวข้อ */
-    font-weight: bold;
-=======
 
 .hero-main-img {
     max-height: 88%;
@@ -129,12 +113,10 @@ body {
     width: auto;
     object-fit: contain;
 
-    /* กรอบขาวบางๆ + เงาฟุ้ง (Soft Modern Look) */
+    /* กรอบขาวบางๆ + เงาฟุ้ง */
     border: 6px solid #fff;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    /* ไม่เอียงภาพแล้ว เพื่อความเนี้ยบ */
->>>>>>> a542b4a (update: add photos page and latest changes)
 }
 
 /* =========================================
@@ -142,37 +124,23 @@ body {
    ========================================= */
 .theme-caption {
     position: absolute;
-    /* ✅ เปลี่ยนตำแหน่ง: ลอยอยู่เหนือขอบล่างนิดหน่อย (Floating) */
     bottom: 30px;
+    /* ลอยอยู่เหนือขอบล่าง */
     left: 50%;
     transform: translateX(-50%);
-    /* จัดกึ่งกลางจอ */
     z-index: 10;
-
     width: 90%;
-    /* ไม่เต็มจอ มีขอบเหลือข้างๆ */
     max-width: 800px;
     padding: 1.5rem 2rem;
 
-    /* พื้นหลังสีเขียวเข้ม (Maya Green) แบบ Solid */
     background-color: var(--maya-green);
-
-    /* ขอบมนมากๆ */
     border-radius: 20px;
-
-    /* เส้นขอบสีครีม ซ้อน 2 ชั้น */
     border: 3px solid var(--maya-cream);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    /* เงาลอย */
 
     text-align: center;
     color: #fff;
 }
-<<<<<<< HEAD
-/* ปุ่มสไตล์เฉพาะของค่าย */
-.btn-primary {
-    background-color: #ff9800;
-=======
 
 .theme-caption h2 {
     font-family: 'Prompt', sans-serif;
@@ -181,14 +149,12 @@ body {
     margin-bottom: 0.5rem;
     color: #fff;
     text-shadow: none;
-    /* เอาเงาออกเพื่อให้ดูคลีน */
 }
 
 .theme-caption p {
     font-size: 1rem;
     font-weight: 400;
     color: var(--maya-cream);
-    /* สีครีมอ่อนๆ อ่านสบาย */
     margin-bottom: 0;
 }
 
@@ -199,90 +165,32 @@ body {
 .carousel-control-next {
     width: 8%;
     opacity: 0.8;
+    z-index: 20;
+    /* ให้อยู่เหนือ Caption */
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    /* ใส่พื้นหลังวงกลมสีขาวให้ลูกศร */
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     padding: 20px;
     background-size: 50%;
 }
 
-/* จุด Indicators (เปลี่ยนเป็นสี่เหลี่ยมข้าวหลามตัด) */
+/* Indicators (Diamond Shape) */
 .carousel-indicators [data-bs-target] {
     background-color: #fff;
     width: 12px;
     height: 12px;
     margin: 0 6px;
     opacity: 0.5;
->>>>>>> a542b4a (update: add photos page and latest changes)
     border: none;
     transform: rotate(45deg);
-    /* หมุนเป็นข้าวหลามตัด */
     border-radius: 2px;
 }
 
-<<<<<<< HEAD
-.btn-primary:hover {
-    background-color: #ff6d33;
-    transform: scale(1.05);
-}
-
-/* Navbar shadow */
-.navbar {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(90deg, #2f03a8 0%, #b64b4b 100%) !important;
-    /* เปลี่ยนสี navbar เป็นทองเข้ม-ส้ม */
-    min-height: 80px;
-        /* หรือปรับเป็นค่าที่ต้องการ */
-}
-.navbar .container {
-    min-height: 80px;
-    align-items: center;
-    display: flex;
-}
-
-/* Text animation ตอนโหลด */
-.hero h1 {
-    animation: fadeInUp 1s ease-out;
-    .hero h1 {
-  font-size: 3rem; /* เปลี่ยนขนาดหัวข้อ */
-  font-weight: bold;
-}
-
-/* ขนาดตัวอักษรย่อ / paragraph */
-.hero p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: auto;
-}
-}
-
-.text-primary {
-    color: #000 !important;
-}
-
-.img-fluid rounded shadow {
-    margin : auto ;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-=======
 .carousel-indicators .active {
     opacity: 1;
     background-color: var(--maya-sand);
-    /* สีทราย */
     transform: rotate(45deg) scale(1.4);
->>>>>>> a542b4a (update: add photos page and latest changes)
 }
