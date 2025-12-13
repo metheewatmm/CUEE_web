@@ -235,58 +235,83 @@
             border-color: var(--maya-cream);
         }
 
+        
         /* =========================================
-           6. Mobile Optimization
+           6. Mobile Optimization (แก้ใหม่ให้พอดีจอ ไม่พัง)
            ========================================= */
         @media (max-width: 768px) {
+            /* ปรับกล่องคอนเทนเนอร์ให้ชิดขอบมากขึ้น */
             #calendarContainer {
-                padding: 15px 10px;
+                padding: 10px 5px; /* ลด Padding ซ้ายขวาเหลือ 5px */
+                overflow-x: hidden; /* กันส่วนเกิน */
             }
 
+            /* บังคับตารางให้หดอยู่ในจอ */
+            .calendar-table {
+                width: 100% !important;
+                table-layout: fixed; /* ⭐ สำคัญมาก: คำสั่งนี้จะบังคับให้ 7 ช่องกว้างเท่ากันเป๊ะ ไม่ล้นจอ */
+                border-spacing: 3px; /* ลดช่องว่างระหว่างกล่อง */
+            }
+
+            /* ลดขนาดตัวอักษรหัวตาราง (อา-ส) */
+            .calendar-table th {
+                font-size: 0.75rem; 
+                padding: 2px 0;
+            }
+
+            /* ปรับกล่องวันที่ให้เล็กลง */
             .calendar-table td {
-                height: 60px;
+                height: 55px; /* ความสูงกำลังดีสำหรับนิ้วจิ้ม */
                 padding: 2px;
-                font-size: 0.85rem;
                 vertical-align: top;
-                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 6px;
+                background-color: rgba(255,255,255,0.95);
             }
 
+            /* ปรับตัวเลขวันที่ */
             .day-number {
-                font-size: 0.8rem;
-                margin-bottom: 0;
-                text-align: center;
-                line-height: 24px;
+                font-size: 0.75rem;
                 margin-top: 2px;
+                margin-right: 0;
+                text-align: center; /* จัดกลางเพื่อให้ดูสมดุลในจอเล็ก */
+                font-weight: normal;
             }
 
-            .event-label {
-                display: none !important;
-            }
-
-            /* Mobile Event Indicators */
+            /* --- ดีไซน์เฉพาะวันที่มีกิจกรรม (Mobile) --- */
+            
             .calendar-table td.event-day {
-                background-color: #ffffff !important;
-                border: 2px solid var(--maya-sage);
+                background-color: #fff !important;
+                border: 1px solid var(--maya-sage); /* ลดความหนาเส้นขอบ */
             }
 
+            /* เปลี่ยนตัวเลขเป็นวงกลมสีเขียว */
             .calendar-table td.event-day .day-number {
                 background-color: var(--maya-green);
                 color: #fff;
+                width: 22px;
+                height: 22px;
+                line-height: 22px; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
                 border-radius: 50%;
-                width: 24px;
-                height: 24px;
-                margin: 0 auto;
+                margin: 0 auto; /* จัดกึ่งกลางแนวนอน */
                 display: block;
+                font-weight: bold;
+                box-shadow: 0 2px 2px rgba(0,0,0,0.1);
             }
 
+            /* ขีดสีน้ำตาลบอกว่ามี Event */
             .calendar-table td.event-day::after {
                 content: '';
                 display: block;
-                width: 15px;
-                height: 4px;
+                width: 12px;
+                height: 3px;
                 background-color: var(--maya-brown-red);
-                border-radius: 2px;
-                margin: 6px auto 0 auto;
+                border-radius: 10px;
+                margin: 4px auto 0 auto;
+            }
+            
+            /* ซ่อนชื่อกิจกรรมยาวๆ (พื้นที่ไม่พอ) */
+            .event-label {
+                display: none !important;
             }
         }
     </style>
