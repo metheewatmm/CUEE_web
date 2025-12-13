@@ -16,17 +16,11 @@
            ========================================= */
         :root {
             --maya-green: #5d866c;
-            /* เขียวใบไม้เข้ม */
             --maya-brown-dark: #624646;
-            /* น้ำตาลเข้ม */
             --maya-brown-red: #914F1E;
-            /* น้ำตาลแดง */
             --maya-sand: #DEAC80;
-            /* สีทรายเข้ม */
             --maya-cream: #F7DCB9;
-            /* สีครีมสว่าง */
             --maya-sage: #B5C18E;
-            /* เขียวอ่อน */
         }
 
         body {
@@ -38,7 +32,7 @@
         }
 
         /* =========================================
-           2. Navbar (Maya Jungle Style)
+           2. Navbar
            ========================================= */
         .theme-navbar {
             background-color: var(--maya-green) !important;
@@ -97,7 +91,6 @@
             padding: 15px;
             font-weight: 600;
             white-space: nowrap;
-            /* หัวตารางไม่ตัดบรรทัด */
         }
 
         #campScheduleTable tbody tr {
@@ -108,15 +101,8 @@
         #campScheduleTable tbody tr:hover {
             background-color: var(--maya-cream) !important;
             transform: scale(1.01);
-            cursor: pointer;
-        }
-
-        /* Highlight Row (Active) */
-        #campScheduleTable tbody tr.is-active {
-            background-color: var(--maya-sage) !important;
-            color: var(--maya-brown-dark);
-            font-weight: bold;
-            box-shadow: inset 5px 0 0 var(--maya-brown-red);
+            /* เอา cursor pointer ออกแล้วครับ */
+            cursor: default;
         }
 
         #campScheduleTable td {
@@ -126,7 +112,7 @@
         }
 
         /* =========================================
-           4. Calendar Grid (Stone Tablet Style)
+           4. Calendar Grid
            ========================================= */
         #calendarContainer {
             background-color: var(--maya-brown-dark);
@@ -163,14 +149,16 @@
             font-size: 0.9rem;
         }
 
-        .calendar-table td:hover {
-            border-color: var(--maya-green);
-            background-color: #fff;
-        }
-
         .calendar-table td.event-day {
             background-color: var(--maya-sage);
             border: 2px solid var(--maya-green);
+            color: #fff;
+        }
+
+        /* สีสำหรับช่วงรับสมัคร */
+        .calendar-table td.event-register {
+            background-color: var(--maya-sand) !important;
+            border-color: var(--maya-brown-red) !important;
             color: #fff;
         }
 
@@ -196,50 +184,24 @@
             white-space: nowrap;
         }
 
-        .calendar-table td.event-day:hover .event-label {
-            background-color: var(--maya-brown-red);
-        }
-
         /* =========================================
-           5. Components (Select, Card, Footer)
+           5. Components
            ========================================= */
         #monthSelector {
             border: 2px solid var(--maya-brown-dark);
             border-radius: 25px;
-            /* แก้ไข Padding: บน 10px, ขวา 50px (เว้นที่ให้ลูกศร), ล่าง 10px, ซ้าย 20px */
             padding: 10px 50px 10px 20px;
             color: var(--maya-brown-dark);
             background-color: #fff;
             font-weight: bold;
             box-shadow: 0 4px 0 rgba(98, 70, 70, 0.2);
             cursor: pointer;
-
-            /* มั่นใจว่า background image (ลูกศร) แสดงผล */
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
             background-repeat: no-repeat;
             background-position: right 1rem center;
             background-size: 16px 12px;
             appearance: none;
-            /* ลบ default style ของ browser */
             -webkit-appearance: none;
-        }
-
-        #dayDetailCard {
-            border: none;
-            border-left: 8px solid var(--maya-brown-red);
-            background-color: #fff;
-            border-radius: 10px;
-            margin-top: 20px;
-            transition: all 0.4s ease-in-out;
-            opacity: 0;
-            transform: translateY(10px);
-            display: none;
-        }
-
-        #dayDetailCard.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-            display: block;
         }
 
         /* Footer Styles */
@@ -273,38 +235,22 @@
             border-color: var(--maya-cream);
         }
 
-        .theme-footer i {
-            color: var(--maya-sage);
-        }
-
         /* =========================================
-           6. Mobile Optimization (Updated: Brighter Look)
+           6. Mobile Optimization
            ========================================= */
         @media (max-width: 768px) {
             #calendarContainer {
                 padding: 15px 10px;
-                background-color: var(--maya-brown-dark);
-            }
-
-            .calendar-table {
-                border-spacing: 4px;
-            }
-
-            .calendar-table th {
-                padding: 5px 0;
-                font-size: 0.75rem;
-                opacity: 0.8;
             }
 
             .calendar-table td {
-                height: 60px; /* เพิ่มความสูงนิดนึงให้ไม่ดูอึดอัด */
+                height: 60px;
                 padding: 2px;
                 font-size: 0.85rem;
                 vertical-align: top;
-                background-color: rgba(255,255,255,0.9); /* พื้นหลังขาวเกือบชัด */
+                background-color: rgba(255, 255, 255, 0.9);
             }
 
-            /* จัดตำแหน่งตัวเลขใหม่ */
             .day-number {
                 font-size: 0.8rem;
                 margin-bottom: 0;
@@ -314,31 +260,25 @@
             }
 
             .event-label {
-                display: none !important; /* ซ่อนชื่อกิจกรรมบนมือถือ */
+                display: none !important;
             }
 
-            /* --- ดีไซน์ใหม่สำหรับวันที่มีกิจกรรม (Mobile) --- */
-            
-            /* 1. กรอบสีเขียวอ่อนๆ ให้รู้ว่ามีกิจกรรม */
+            /* Mobile Event Indicators */
             .calendar-table td.event-day {
-                background-color: #ffffff !important; /* พื้นหลังขาวสว่าง */
-                border: 2px solid var(--maya-sage); /* ขอบสีเขียวอ่อน */
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                background-color: #ffffff !important;
+                border: 2px solid var(--maya-sage);
             }
 
-            /* 2. เปลี่ยนตัวเลขเป็นวงกลมสีเขียวเข้ม เด่นๆ */
             .calendar-table td.event-day .day-number {
                 background-color: var(--maya-green);
                 color: #fff;
                 border-radius: 50%;
                 width: 24px;
                 height: 24px;
-                margin: 0 auto; /* จัดกึ่งกลาง */
+                margin: 0 auto;
                 display: block;
-                box-shadow: 0 2px 2px rgba(0,0,0,0.2);
             }
 
-            /* 3. เพิ่มขีดสีน้ำตาลด้านล่าง (แทนจุดเดิม) */
             .calendar-table td.event-day::after {
                 content: '';
                 display: block;
@@ -389,68 +329,63 @@
                         </tr>
                     </thead>
                     <tbody id="scheduleBody">
-                        <tr data-day="interview" data-date="2026-01-24">
+                        <tr>
                             <td><span class="badge bg-secondary rounded-pill">Info</span></td>
                             <td>24 Jan 2026</td>
                             <td>Interview for Selected Candidates</td>
                             <td>Online/Onsite TBC</td>
                         </tr>
-                        <tr data-day="5" data-date="2026-03-07">
+                        <tr>
                             <td><span class="badge rounded-pill" style="background-color: var(--maya-brown-red);">Day
-                                    5</span></td>
+                                    1</span></td>
                             <td>7 Mar 2026</td>
                             <td>Workshop Part 1</td>
                             <td>Lab, EE Building</td>
                         </tr>
-                        <tr data-day="6" data-date="2026-03-08">
+                        <tr>
                             <td><span class="badge rounded-pill" style="background-color: var(--maya-brown-red);">Day
-                                    6</span></td>
+                                    2</span></td>
                             <td>8 Mar 2026</td>
                             <td>Workshop Part 2</td>
                             <td>Lab, EE Building</td>
                         </tr>
-                        <tr data-day="7" data-date="2026-03-14">
+                        <tr>
                             <td><span class="badge rounded-pill" style="background-color: var(--maya-brown-red);">Day
-                                    7</span></td>
+                                    3</span></td>
                             <td>14 Mar 2026</td>
                             <td>Workshop Part 3</td>
                             <td>Lab, EE Building</td>
                         </tr>
-                        <tr data-day="8" data-date="2026-03-15">
+                        <tr>
                             <td><span class="badge rounded-pill" style="background-color: var(--maya-brown-red);">Day
-                                    8</span></td>
+                                    4</span></td>
                             <td>15 Mar 2026</td>
                             <td>Workshop Part 4</td>
                             <td>Lab, EE Building</td>
                         </tr>
-                        <tr data-day="9" data-date="2026-03-20">
+                        <tr>
                             <td><span class="badge rounded-pill" style="background-color: var(--maya-green);">Day
-                                    9</span></td>
+                                    5</span></td>
                             <td>20 Mar 2026</td>
                             <td>Project Development (Day 1)</td>
                             <td>Innovation Space</td>
                         </tr>
-                        <tr data-day="10" data-date="2026-03-21">
+                        <tr>
                             <td><span class="badge rounded-pill" style="background-color: var(--maya-green);">Day
-                                    10</span></td>
+                                    6</span></td>
                             <td>21 Mar 2026</td>
                             <td>Project Development (Day 2)</td>
                             <td>Innovation Space</td>
                         </tr>
-                        <tr data-day="11" data-date="2026-03-22">
+                        <tr>
                             <td><span class="badge rounded-pill"
-                                    style="background-color: var(--maya-sand); color: #000;">Day 11</span></td>
+                                    style="background-color: var(--maya-sand); color: #000;">Day 7</span></td>
                             <td>22 Mar 2026</td>
                             <td>Final Presentation & Closing</td>
                             <td>Main Auditorium</td>
                         </tr>
                     </tbody>
                 </table>
-
-                <div id="dayDetailCard" class="card shadow-lg mb-4">
-                    <div class="card-body">
-                    </div>
-                </div>
             </div>
 
             <div class="container my-5">
@@ -479,29 +414,18 @@
                         <h4 class="mb-0 fw-bold text-white">CUEE CAMP 3rd</h4>
                     </div>
                 </div>
-
                 <div class="col-lg-4">
                     <div class="d-flex justify-content-center gap-3">
-                        <a href="https://www.facebook.com/cuee.camp" target="_blank" class="maya-social-btn"
-                            title="Facebook Page">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="https://www.instagram.com/cuee_camp/" target="_blank" class="maya-social-btn"
-                            title="Instagram">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@cuee.camp" target="_blank" class="maya-social-btn"
-                            title="TikTok">
-                            <i class="bi bi-tiktok"></i>
-                        </a>
-                        <a href="https://line.me/ti/g2/4aCM5Ptx7ls_haYC2glWKxF3ZjuGBRuXHDrrrg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
-                            target="_blank" class="maya-social-btn" title="Line Openchat">
-                            <i class="bi bi-chat-dots-fill"></i>
-                        </a>
+                        <a href="https://www.facebook.com/cuee.camp" target="_blank" class="maya-social-btn"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/cuee_camp/" target="_blank" class="maya-social-btn"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@cuee.camp" target="_blank" class="maya-social-btn"><i
+                                class="bi bi-tiktok"></i></a>
+                        <a href="#" target="_blank" class="maya-social-btn"><i class="bi bi-chat-dots-fill"></i></a>
                     </div>
                     <p class="text-center mt-3 mb-0 small text-white">@cuee_camp</p>
                 </div>
-
                 <div class="col-lg-4 text-center text-lg-end">
                     <div class="mb-2">
                         <i class="bi bi-geo-alt-fill me-2"></i>
@@ -509,9 +433,7 @@
                     </div>
                 </div>
             </div>
-
             <hr class="my-4" style="border-color: rgba(255,255,255,0.15);">
-
             <div class="text-center">
                 <p class="mb-0 small" style="opacity: 0.7;">&copy; 2025 CUEE Camp </p>
             </div>
