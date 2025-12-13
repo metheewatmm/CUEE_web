@@ -1,31 +1,230 @@
+<<<<<<< HEAD
 /* Hero Section background */
 .hero {
     background: linear-gradient(135deg, #a89403, #7e0000);
     height: 90vh;
+=======
+/* =========================================
+   1. Theme Variables (Palette จากบรีฟ)
+   ========================================= */
+:root {
+    --maya-green: #5d866c;
+    /* เขียวใบไม้เข้ม */
+    --maya-brown-dark: #624646;
+    /* น้ำตาลเข้ม */
+    --maya-brown-red: #914F1E;
+    /* น้ำตาลแดง */
+    --maya-sand: #DEAC80;
+    /* สีทรายเข้ม */
+    --maya-cream: #F7DCB9;
+    /* สีครีมสว่าง */
+    --maya-sage: #B5C18E;
+    /* เขียวอ่อน */
+}
+
+body {
+    background-color: #fffaf0;
+    /* พื้นหลังขาวนวล (Floral White) ให้ดูสะอาด */
+    color: var(--maya-brown-dark);
+    font-family: 'Prompt', sans-serif;
+}
+
+/* =========================================
+   2. Navbar (Modern Sand Style)
+   ========================================= */
+.theme-navbar {
+    /* ✅ เปลี่ยนเป็นพื้นหลังสีครีมสว่าง */
+    background-color: var(--maya-cream);
+
+    /* ขอบล่างสีเขียวเข้ม เน้นเส้นสาย */
+    border-bottom: 4px solid var(--maya-green);
+
+    /* เงาบางๆ ให้ดูลอยนิดๆ */
+    box-shadow: 0 4px 10px rgba(98, 70, 70, 0.1);
+}
+
+.navbar-brand {
+    color: var(--maya-brown-dark) !important;
+    /* โลโก้สีน้ำตาลเข้ม */
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: var(--maya-brown-dark) !important;
+    font-weight: 600;
+    margin: 0 5px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    /* ปุ่มมนรี (Pill shape) */
+    transition: all 0.3s ease;
+}
+
+/* Hover: พื้นหลังสีเขียว ตัวหนังสือขาว */
+.nav-link:hover,
+.nav-link.active {
+    background-color: var(--maya-green);
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(93, 134, 108, 0.3);
+}
+
+/* Toggler (Mobile) */
+.navbar-toggler {
+    border-color: var(--maya-brown-dark);
+}
+
+.navbar-toggler-icon {
+    /* SVG สีน้ำตาลเข้ม */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(98, 70, 70, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* =========================================
+   3. Hero Carousel (Clean & Pop)
+   ========================================= */
+.hero-carousel-item {
+    height: 85vh;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--maya-brown-dark);
+}
+
+/* Background Blur */
+.bg-blur-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(20px) brightness(0.9);
+    /* สว่างขึ้นกว่าแบบแรก */
+    z-index: 0;
+    transform: scale(1.1);
+}
+
+/* Main Image */
+.main-img-container {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding-bottom: 100px;
+>>>>>>> a542b4a (update: add photos page and latest changes)
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(255, 255, 255);
 }
+<<<<<<< HEAD
 .hero h1 {
     font-size: 3rem;
     /* เปลี่ยนขนาดหัวข้อ */
     font-weight: bold;
+=======
+
+.hero-main-img {
+    max-height: 88%;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+
+    /* กรอบขาวบางๆ + เงาฟุ้ง (Soft Modern Look) */
+    border: 6px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    /* ไม่เอียงภาพแล้ว เพื่อความเนี้ยบ */
+>>>>>>> a542b4a (update: add photos page and latest changes)
 }
 
-/* ขนาดตัวอักษรย่อ / paragraph */
-.hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: auto;
+/* =========================================
+   4. Caption (The Jungle Sticker Box)
+   ========================================= */
+.theme-caption {
+    position: absolute;
+    /* ✅ เปลี่ยนตำแหน่ง: ลอยอยู่เหนือขอบล่างนิดหน่อย (Floating) */
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* จัดกึ่งกลางจอ */
+    z-index: 10;
+
+    width: 90%;
+    /* ไม่เต็มจอ มีขอบเหลือข้างๆ */
+    max-width: 800px;
+    padding: 1.5rem 2rem;
+
+    /* พื้นหลังสีเขียวเข้ม (Maya Green) แบบ Solid */
+    background-color: var(--maya-green);
+
+    /* ขอบมนมากๆ */
+    border-radius: 20px;
+
+    /* เส้นขอบสีครีม ซ้อน 2 ชั้น */
+    border: 3px solid var(--maya-cream);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* เงาลอย */
+
+    text-align: center;
+    color: #fff;
 }
+<<<<<<< HEAD
 /* ปุ่มสไตล์เฉพาะของค่าย */
 .btn-primary {
     background-color: #ff9800;
-    border: none;
-    transition: 0.3s;
+=======
+
+.theme-caption h2 {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-shadow: none;
+    /* เอาเงาออกเพื่อให้ดูคลีน */
 }
 
+.theme-caption p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--maya-cream);
+    /* สีครีมอ่อนๆ อ่านสบาย */
+    margin-bottom: 0;
+}
+
+/* =========================================
+   5. Controls & Indicators
+   ========================================= */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+    opacity: 0.8;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    /* ใส่พื้นหลังวงกลมสีขาวให้ลูกศร */
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    padding: 20px;
+    background-size: 50%;
+}
+
+/* จุด Indicators (เปลี่ยนเป็นสี่เหลี่ยมข้าวหลามตัด) */
+.carousel-indicators [data-bs-target] {
+    background-color: #fff;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+    opacity: 0.5;
+>>>>>>> a542b4a (update: add photos page and latest changes)
+    border: none;
+    transform: rotate(45deg);
+    /* หมุนเป็นข้าวหลามตัด */
+    border-radius: 2px;
+}
+
+<<<<<<< HEAD
 .btn-primary:hover {
     background-color: #ff6d33;
     transform: scale(1.05);
@@ -79,4 +278,11 @@
         opacity: 1;
         transform: translateY(0);
     }
+=======
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--maya-sand);
+    /* สีทราย */
+    transform: rotate(45deg) scale(1.4);
+>>>>>>> a542b4a (update: add photos page and latest changes)
 }
